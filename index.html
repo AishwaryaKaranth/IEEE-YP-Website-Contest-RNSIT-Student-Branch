@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet"> 
+
+    <title>IEEE YP</title>
+    <style>
+  body {
+      position: relative; 
+  }
+  #section1 {padding-top:50px;height:500px;color: #fff; background-color: #1E88E5;}
+  #section2 {padding-top:50px;height:500px;color: #fff; background-color: #673ab7;}
+  #section3 {padding-top:50px;height:500px;color: #fff; background-color: #ff9800;}
+  #section41 {padding-top:50px;padding-right:100px;height:500px;color: #fff; background-color: #00bcd4;}
+  #section42 {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+  .nav-pills .nav-link {
+    border-radius: .25rem;
+    margin-right: 2.5rem;
+}
+p{
+  text-align: left;
+  /*margin-left:20rem;
+  margin-right: 20rem;*/
+  font-family: 'Abel', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 1rem;
+  position:relative;
+  z-index:1;
+  margin-bottom: 20%;
+  margin-top:10%;
+}
+h4{
+  text-align:center;
+  font-size:2rem;
+  margin-top:10%;
+}
+#bg{
+  opacity: 0.3;
+  position:absolute;
+  z-index:-1;
+  max-width: inherit;
+  margin-left: 20%;
+}
+.flex-container{
+  display:flex;
+  flex-wrap: wrap;
+  overflow:auto;
+}
+.flex-container > div{
+
+}
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+#logo{
+  width:30%;
+  height:30%;
+  border-radius: 0%;
+}
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+img{
+  border-radius: 50%;
+}
+.timeline {
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  background: #C5CAE9;
+  width: 5px;
+  height: 95%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 100%;
+  margin-bottom: 70px;
+}
+.timeline-item:nth-child(even) .timeline-content {
+  float: right;
+  padding: 40px 30px 10px 30px;
+}
+.timeline-item:nth-child(even) .timeline-content .date {
+  right: auto;
+  left: 0;
+}
+.timeline-item:nth-child(even) .timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  left: -15px;
+  border-width: 10px 15px 10px 0;
+  border-color: transparent #f5f5f5 transparent transparent;
+}
+.timeline-item::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.timeline-content {
+  position: relative;
+  width: 45%;
+  padding: 10px 30px;
+  border-radius: 4px;
+  background: #f5f5f5;
+  box-shadow: 0 20px 25px -15px rgba(0, 0, 0, 0.3);
+}
+.timeline-content::after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  top: 30px;
+  right: -15px;
+  border-width: 10px 0 10px 15px;
+  border-color: transparent transparent transparent #f5f5f5;
+}
+
+.timeline-img {
+  width: 30px;
+  height: 30px;
+  background:   #111d4d;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  margin-top: 25px;
+  margin-left: -15px;
+}
+
+a {
+  background: black;
+  color: #FFFFFF;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  display: inline-block;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px -1px rgba(0, 0, 0, 0.6);
+}
+a:hover, a:active, a:focus {
+  background: #32408f;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.timeline-card {
+  padding: 0 !important;
+}
+.timeline-card p {
+  padding: 0 20px;
+}
+.timeline-card a {
+  margin-left: 20px;
+}
+
+.timeline-item:nth-child(2) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("pyicon.jpg") center center no-repeat;
+  background-size: cover;
+}
+.timeline-item:nth-child(4) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("poster.jpg") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-item:nth-child(5) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("hardwarehackathon.jpeg") center center no-repeat;
+  background-size: cover;
+}
+.timeline-item:nth-child(6) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("techcharades.jpeg") center center no-repeat;
+  background-size: cover;
+}
+.timeline-item:nth-child(7) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("codathon.jpeg") center center no-repeat;
+  background-size: cover;
+}
+.timeline-item:nth-child(8) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("reversecoding.jpeg") center center no-repeat;
+  background-size: cover;
+}
+.timeline-item:nth-child(11) .timeline-img-header {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)), url("https://hd.unsplash.com/photo-1469429978400-082eec725ad5") center center no-repeat;
+  background-size: cover;
+}
+
+.timeline-img-header {
+  height: 500px;
+  position: relative;
+  margin-bottom: 20px;
+}
+.timeline-img-header h2 {
+  color: #FFFFFF;
+  position: absolute;
+  bottom: 5px;
+  left: 20px;
+}
+
+/*blockquote {
+  margin-top: 30px;
+  color: #757575;
+  border-left-color: #3F51B5;
+  padding: 0 20px;
+}*/
+
+.date {
+  background: #2E64FE;
+  display: inline-block;
+  color: #FFFFFF;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  h2{
+    line-height: 1.5;
+    font-family: 'Audiowide', cursive;
+  }
+  header{
+    padding: 
+  }
+  .timeline::before {
+    left: 50px;
+  }
+  .timeline .timeline-img {
+    left: 50px;
+  }
+  .timeline .timeline-content {
+    max-width: 100%;
+    width: auto;
+    margin-left: 70px;
+  }
+  .timeline .timeline-item:nth-child(even) .timeline-content {
+    float: none;
+  }
+  .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #f5f5f5 transparent transparent;
+  }
+}
+  </style>
+  </head>
+  <body>
+
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <nav id="navbar-example2" class="navbar navbar-light bg-light">
+ <!-- <a class="navbar-brand" href="#">Navbar</a>-->
+ <img id="logo" src="logo.jpg">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">About</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#one">IEEE Young Professionals</a>
+        <a class="dropdown-item" href="#two">IEEE Young Professional Bangalore Affinity Group</a>
+        <a class="dropdown-item" href="#three">Achievements and Awards</a>
+        <a class="dropdown-item" href="#four">Events</a>
+        <div role="separator" class="dropdown-divider">Initiatives</div>
+        <a class="dropdown-item" href="#three"></a>
+      </div>
+    </li>
+      <a class="nav-link" href="#execom">Execom Members 2020</a>
+    </li>
+    </li>
+      <a class="nav-link" href="#gallery">Gallery</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#contact">Contact</a>
+    </li>
+  </ul>
+</nav>
+<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+  <!--<h4 id="gallery">@fat</h4>
+  <p>...</p>
+  <h4 id="contact">@mdo</h4>
+  <p>...</p>-->
+  <h4 id="one">IEEE Young Professionals</h4>
+  <img id="bg" src="bg.jpg">
+  <p>IEEE Young Professionals is an international community of enthusiastic, dynamic, and innovative members and volunteers. IEEE is committed to helping young professionals evaluate their career goals, polish their professional image, and create the buliding blocks of a lifelong and diverse professional network.
+  Affliation with IEEE Young Professionals is open to Graduatesstudents and higher grade members with early career interests. IEEE Young Professionals provides career advantage resources and helps members leverage the power of the global network through its expanding Affinity Groups and volunteer oppurtunities.
+  For further information on IEEE Young Professionals please click on <a href="yp.ieee.org">yp.ieee.org</a></p>
+  
+  <h4 id="two">IEEE Young Professionals Affinity Group</h4>
+  <p>IEEE Young Professionals Affinity Group in Bangalore Section was formed in the
+year 2000. The young professional volunteers from Bangalore Section have
+stepped up to take larger responsibilities on a global scale such as chairing the
+IEEE Xtreme committee, IEEE Special Interest Group on Humanitarian
+Technologies (SIGHT) committee etc. Several volunteers have been awarded with
+prestigious IEEE awards such as the Young Professional Achievement Award,
+Outstanding Volunteer Award etc.Volunteer growth and member engagement
+has been a core focus for IEEE Young Professionals Bangalore Affinity Group </p>
+<p> 
+
+
+</p>
+  <h4 id="three">ACHIEVEMENTS AND AWARDS</h4>
+  <p>•Kartik Kulkarni (R10), Bangalore Section in 2011 :For dynamic leadership in spearheading humanitarian and innovative engagement opportunities for young IEEE engineering professionals in India. </p>
+  <p>•Manjunath Iyer (R10), Bangalore Section in 2013: For continuous support to the IEEE Teacher In-Service Program (TISP) and Student Transition & Elevation Partnership (STEP) events. </p>
+  <p>•Nipun Manral (R10), Bangalore Section 2015: For exemplary leadership and contribution toward student and young professional activities and for continuous efforts to elevate the technical and professional development of IEEE members. Also awarded with IEEE Asia Pacific Young Professional Outstanding Volunteer Award 2016, IEEE Bangalore Best Volunteer Award 2015, IEEE Asia Pacific Outstanding Young Professional Affinity Group Award 2015, IEEE, MGA Young Professionals Achievement Award 2015. </p>
+ <p> •Abhishek Appaji: New Initiative Program Award at IEEE Region 10 Student, Young Professional, Women in Engineering Congress 2015 held from 9th to 12th July 2015 at Colombo, Srilanka. Out standing volunteer award for Bangalore Section 2019. </p><p>
+  •Dr. Ashwini Appaji for best Presentation at R10 congress 2018 for YP track and poster presentation at  Bali Indonesia. Out standing YP Volunteer award 2019 Bangalore section. </p>
+  </p>
+  <h4 id="four">EVENTS</h4>
+   <section class="timeline">
+    <div class="container">
+      <div class="timeline-item">
+        <div class="timeline-img"></div>
+
+        
+      
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content timeline-card js--fadeInRight">
+          <div class="timeline-img-header">
+            
+          </div>
+          <div class="date">date</div>
+          <p>event</p>
+          <a class="bnt-more" href="javascript:void(0)">Register</a>
+        </div>
+
+      </div>   
+      
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content js--fadeInLeft">
+          <div class="timeline-img-header">
+            <h2>Image</h2>
+          </div>
+          <div class="date">Date</div>
+          
+          <p>event</p>
+        </div>
+      </div>   
+      
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content js--fadeInRight">
+          
+          <div class="date">date</div>
+          <p>event</p>
+          
+          <a class="bnt-more" href="">Register</a>
+          
+        </div>
+      </div>   
+      
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content timeline-card js--fadeInLeft">
+          <div class="timeline-img-header">
+            <h2></h2>
+          </div>
+          <div class="date">date</div>
+          <p></p>
+          <a class="bnt-more" href="">Register</a>
+        </div>
+      </div>   
+
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content timeline-card js--fadeInRight">
+          <div class="timeline-img-header">
+            <h2></h2>
+          </div>
+          <div class="date">date</div>
+          <p>event</p>
+          <a class="bnt-more" href="">Register</a>
+        </div>
+      </div>  
+      
+      <div class="timeline-item">
+
+        <div class="timeline-img"></div>
+
+        <div class="timeline-content timeline-card js--fadeInLeft">
+          <div class="timeline-img-header">
+            <h2></h2>
+          </div>
+          <div class="date">date</div>
+          <p>event</p>
+          <a class="bnt-more" href="">Register</a>
+         
+        </div>
+      </div>   
+    </div>
+  </div>
+</section>
+      
+  <h4 id="execom">EXECOM MEMBERS 2020</h4>
+  <div class="flex-container">
+  
+  
+  <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="drashwini.jpg" alt="Dr.Ashwini Appaji" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>DR.ASHWINI APPAJI</h1> 
+      <p>CHAIR</p> 
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="gitansh_anand.jpg" alt="Gitansh Anand" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>GITANSH ANAND</h1> 
+      <p>VICE CHAIR</p> 
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src=".jpg" alt="Moinam Chatterjee" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1></h1> 
+      <p></p> 
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="" alt="Nikhil Arora" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1></h1> 
+      <p></p> 
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="" alt="Samarth Bonthale" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1>Samarth Bonthale</h1> 
+      <p>Secretary</p> 
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="" alt="Neha Kumari" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1></h1> 
+      <p></p> 
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="" alt="Shaik Suraiah Tehseen" style="width:300px;height:300px;">
+    </div>
+    <div class="flip-card-back">
+      <h1></h1> 
+      <p></p> 
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+   </div>
+ <footer>
+  <p>
+  Contact information: <a href="mailto:someone@example.com">
+  ieee.org</a>.</p>
+</footer> 
+ <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+<script src='https://cdn.jsdelivr.net/scrollreveal.js/3.3.1/scrollreveal.min.js'></script>
+
+<script src="js/index.js"></script>
+
+
+  </body>
+
+</html>
